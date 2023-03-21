@@ -36,6 +36,7 @@ function generatePassword(){
     calculateQuality()
     calculateFontSize()
 }
+
 function calculateQuality(){
     const percent = Math.round((passwordLenght / 64) * 25 + 
     (upperCaseCheck.checked ? 15 : 0))  + (numberCheck.checked ? 25 : 0) +
@@ -114,7 +115,5 @@ const buttonCopy2 = document.getElementById('copy2')
 buttonCopy2.addEventListener('click', copy)
 
 //refresh
-
-const buttonRefresh = document.querySelector('button_refresh')
-buttonRefresh.addEventListener('click', generatePassword)
-generatePassword()
+const buttonRefresh = document.getElementById('button_refresh')
+buttonRefresh.addEventListener('click', ()=> generatePassword())
